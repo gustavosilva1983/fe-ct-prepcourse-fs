@@ -5,12 +5,16 @@ function mayuscula(nombre) {
    // Debe devolver el mismo nombre, pero con la primera letra en mayúscula.
    // [Ejemplo]: "mario" ----> "Mario".
    // Tu código:
+   return upperCase = nombre.charAt(0).toUpperCase() + nombre.slice(1)
+   
 }
 
 function invocarCallback(cb) {
    // Invoca/ejecuta el callback `cb`.
    // [NOTA]: no debes reotrnar nada.
    // Tu código:
+
+   cb()
 }
 
 function operacionMatematica(num1, num2, cb) {
@@ -18,6 +22,8 @@ function operacionMatematica(num1, num2, cb) {
    // El callback realiza una operación matemática, por lo que necesita de los dos números.
    // Retorna el resultado del callback pasándole como parámetros los números.
    // Tu código:
+    return cb(num1,num2) 
+     
 }
 
 function sumarArray(arrayOfNumbers, cb) {
@@ -26,6 +32,11 @@ function sumarArray(arrayOfNumbers, cb) {
    // Este resultado debes pasárselo como argumento al callback recibido.
    // [NOTA]: no debes reotrnar nada.
    // Tu código:
+   let suma = 0
+   for (let i = 0; i < arrayOfNumbers.length; i++) {
+       suma = suma + arrayOfNumbers[i] 
+   }
+   cb(suma)
 }
 
 function forEach(array, cb) {
@@ -33,6 +44,9 @@ function forEach(array, cb) {
    // Debes iterar sobre el arreglo, y por cada elemento ejecutar el callback.
    // Debes pasarle el elemento como argumento al callback.
    // Tu código:
+array.forEach(element => {
+   cb(element)
+});
 }
 
 function map(array, cb) {
@@ -40,12 +54,32 @@ function map(array, cb) {
    // Tiene que guardar el resultado devuelto por el callback en cada elemento dentro de un nuevo arreglo.
    // Retorna el nuevo arreglo.
    // Tu código:
+   let nuevoArreglo = array.map(e =>{
+      return cb(e)
+   })   
+   return nuevoArreglo
 }
 
 function filter(arrayOfStrings) {
    // Debes identificar todos los elementos el arreglo que comiencen con la letra "a".
    // Luego retorna un nuevo arreglo con estos elementos.
    // Tu código:
+   const newArray = arrayOfStrings.filter(item =>
+        item.charAt(0) == "a"
+      )
+   return newArray
+
+   
+   // const filterItems = query =>{ 
+   // return arrayOfStrings.filter((elemento) =>
+   // elemento.toLowerCase().indexOf(query.toLowerCase()) > -1
+   // );
+   // }
+   // return filterItems("a")
+
+
+
+
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
